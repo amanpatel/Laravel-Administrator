@@ -80,3 +80,25 @@
 <script id="filtersTemplate" type="text/html">
 	<?php echo View::make("administrator::templates.filters")?>
 </script>
+
+
+<script>
+function add_new_answer(question_id){
+	console.log("Will add new answer for question_id", question_id);
+
+	var ans = prompt("Please enter answer text:");
+
+	if (ans)
+	{
+		$.post("<?= url('admin/answers/0/save') ?>", {
+			'question': question_id,
+			'answer': ans,
+			'level': 1,
+			'_token': csrf,
+			'active': true
+		}).done(function(){
+			window.location.reload();
+		});
+	}
+}
+</script>

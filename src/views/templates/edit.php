@@ -132,6 +132,9 @@
 														id: field_id},
 													select2: {data:{results: $root.listOptions[field_name]}, multiple: true, sort: sort_field},
 													value: $root[field_name]" />
+
+				<input type="button" class="remove_button" data-bind="click: function() {add_new_answer($root.id()); }" value="+" />
+				<!--var test=prompt('enter name'); console.log(test);-->
 				<!-- /ko -->
 			<!-- /ko -->
 
